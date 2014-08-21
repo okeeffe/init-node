@@ -36,7 +36,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(compress());
 app.use(connectAssets({
-  paths: [path.join(__dirname, 'public/stylesheets'), path.join(__dirname, 'public/javascripts')],
+  paths: [path.join(__dirname, 'public/compiled/stylesheets'), path.join(__dirname, 'public/compiled/javascripts')],
   helperContext: app.locals
 }))
 app.use(favicon());
