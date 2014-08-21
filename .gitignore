@@ -15,6 +15,7 @@ tmp
 
 npm-debug.log
 node_modules
+.sass-cache
 .idea
 *.iml
 .DS_Store

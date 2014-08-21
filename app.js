@@ -14,8 +14,9 @@ var passport = require('passport');
 var connectAssets = require('connect-assets');
 var _ = require('lodash');
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
+var index = require('./controllers/index');
+var users = require('./controllers/users');
+var account = require('./controllers/account');
 
 var app = express();
 
@@ -59,8 +60,15 @@ app.use(function(req, res, next) {
 });
 //app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
-app.use('/users', users);
+/**
+ * Routing.
+ */
+
+var routes = require('./routes')(app);
+
+/**
+ * Error handling.
+ */
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
