@@ -62,7 +62,7 @@ gulp.task('images', function() {
 // });
 
 gulp.task('watch', function() {
-  gulp.watch('public/stylesheets/*.scss', ['style']);
+  gulp.watch('public/stylesheets/**/*.scss', ['style']);
   gulp.watch(['public/**/*.js', '!public/app.min.js', '!public/vendor'], ['scripts']);
   gulp.watch('public/images/*', ['images']);
 

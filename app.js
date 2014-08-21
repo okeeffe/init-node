@@ -58,7 +58,7 @@ app.use(function(req, res, next) {
   if (_.contains(csrfExclude, req.path)) return next();
   csrf(req, res, next);
 });
-//app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 /**
  * Routing.
@@ -85,6 +85,7 @@ if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
+      title: err.status,
       message: err.message,
       error: err
     });
